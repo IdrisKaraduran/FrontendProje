@@ -1,17 +1,34 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Image, Nav, Navbar, Offcanvas } from 'react-bootstrap'
 import { config } from '../../helpers/config'
 import { FiHome, FiAperture, FiCalendar, FiAward, FiHeadphones } from "react-icons/fi"
-
-
 const Menubar = () => {
+  const [mode, setMode] = useState("white");
+  const handleScroll = () => { 
+    const scrollYPosition = window.scrollY;
+    if(scrollYPosition > 250){
+      setMode("dark");
+    }
+    else{
+      setMode("white")
+    }
+   }
+   useEffect(() => {
+     window.addEventListener("scroll", handleScroll);
+   
+     return () => {
+      window.removeEventListener("scroll", handleScroll);
+     }
+   }, [])
+   
+  
   return (
-    <Navbar expand="lg" className="bg-body-tertiary mb-3" sticky="top">
+    <Navbar expand="lg" className={`menubar bg-${mode}`} sticky="top" data-bs-theme={mode}>
           <Container>
             <Navbar.Brand href="#" title={config.project.name}>
-                <Image src="/images/logo/logo.png" className="img-fluid" alt={config.project.name}/>
+                <Image src={`/images/logo/${mode==="white" ? "logo" : "logo-white"}.png`} className="img-fluid" alt={config.project.name}/>
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`}/>
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-lg`}
               aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
@@ -30,7 +47,6 @@ const Menubar = () => {
                   <Nav.Link href="#action4"><FiAward/> About</Nav.Link>
                   <Nav.Link href="#action5"><FiHeadphones/> Contact</Nav.Link>
                 </Nav>
-
                 <a href={`tel:${config.contact.phone1}`} className="btn btn-outline-primary"><FiHeadphones/> CALL NOW</a>
                 
               </Offcanvas.Body>
@@ -39,5 +55,4 @@ const Menubar = () => {
         </Navbar>
   )
 }
-
 export default Menubar
