@@ -8,17 +8,24 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
+
 const UpcomingEvents = () => {
+
     const upcomingEvents = events.filter( (event) => new Date(event.date) > new Date())
+
+
   return (
     <div className="upcoming-events">
         <Container>
             <h2>
-                <div className="swiper-button-prev"><FiChevronLeft/></div>
+                <div className="prev"><FiChevronLeft/></div>
                 <div>Upcoming Events</div>
-                <div className="swiper-button-next"><FiChevronRight/></div>
+                <div className="next"><FiChevronRight/></div>
             </h2>
+
+
             <Swiper
+                modules={[Navigation]}
                 spaceBetween={50}
                 slidesPerView={1}
                 onSlideChange={() => console.log('slide change')}
@@ -27,7 +34,7 @@ const UpcomingEvents = () => {
                     prevEl: '.prev',
                     nextEl: '.next'
                 }} 
-                modules={[Navigation]}
+                
                 breakpoints={{
                     576:{
                         slidesPerView: 2
@@ -44,10 +51,14 @@ const UpcomingEvents = () => {
                 {upcomingEvents.map( (event)=> <SwiperSlide key={event.id}>
                     <EventCard {...event} />
                 </SwiperSlide> )}
+
             </Swiper>
             
+
         </Container>
+
     </div>
   )
 }
+
 export default UpcomingEvents

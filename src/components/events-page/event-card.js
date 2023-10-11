@@ -2,6 +2,7 @@ import React from 'react'
 import { Card } from 'react-bootstrap';
 import { FiClock, FiMapPin } from "react-icons/fi";
 import "./event-card.scss";
+
 const EventCard = ({image, title, time, location}) => {
   return (
     <Card className="event-card">
@@ -19,4 +20,5 @@ const EventCard = ({image, title, time, location}) => {
     </Card>
   )
 }
+
 export default EventCard

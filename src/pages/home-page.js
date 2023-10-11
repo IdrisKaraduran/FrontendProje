@@ -6,21 +6,18 @@ import FeaturedCourses from '../components/home-page/featured-courses'
 import UpcomingEvents from '../components/events-page/upcoming-events'
 import MobileApp from '../components/home-page/mobile-app'
 
-
 const HomePage = () => {
   return (
     <>
-      <Slider/>
-      <Spacer />
-      <Welcome />
-      <Spacer />
-      <FeaturedCourses />
-      <Spacer />
-      <UpcomingEvents />
-      <Spacer />
-      <MobileApp />
-     
-
+        <Slider/>
+        <Spacer/>
+        <Welcome/> 
+        <Spacer/>
+        <FeaturedCourses/>
+        <Spacer/>
+        <UpcomingEvents/>
+        <Spacer/>
+        <MobileApp/>
     </>
   )
 }

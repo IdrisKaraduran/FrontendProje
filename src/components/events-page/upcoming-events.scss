@@ -1,4 +1,5 @@
 @use "../../styles/variables" as v;
+
 .upcoming-events{
     h2{
         display: flex;
@@ -6,6 +7,7 @@
         color: v.$color2;
         margin-bottom: 50px;
     }
+
     .swiper-slide{
         height: auto;
     }

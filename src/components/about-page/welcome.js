@@ -13,6 +13,7 @@ const Welcome = () => {
                 <Col md={6}>
                     <h2 className="mb-3">Welcome to the most preferred IT School</h2>
                     <p className="mb-3">Through a combination of lectures, readings, discussions, students will gain a solid foundation in educational psychology.</p>
+
                     <ul>
                         <li>Cutting-edge curriculum for the latest IT trends and technologies.</li>
                         <li>Expert instructors passionate about sharing their knowledge.</li>
@@ -22,7 +23,9 @@ const Welcome = () => {
                 </Col>
             </Row>
         </Container>
+
     </div>
   )
 }
+
 export default Welcome
