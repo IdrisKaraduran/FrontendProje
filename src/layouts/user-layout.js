@@ -18,13 +18,12 @@ const UserLayout = () => {
       <Menubar />
       <Outlet />
       <Footer />
-      <ScrollToTopButton />
+      <ScrollToTopButton/>
     </>
   );
 };
 
 export default UserLayout;
-
 
 
 

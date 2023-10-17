@@ -1,4 +1,3 @@
-
 export const config = {
     project: {
         name: 'IT Mastery School',
@@ -25,6 +24,18 @@ export const config = {
     api: {
         baseUrl: 'https://mycampusmates.com/app',
     },
-    
+    pageRoles: {
+        dashboard: ["ADMIN","MANAGER", "ASSISTANTMANAGER", "TEACHER", "STUDENT"],
+        adminManagement: ["ADMIN"],
+        managerManagement: ["ADMIN"],
+        assistantManagerManagement: ["ADMIN", "MANAGER"],
+        teacherManagement: ["ADMIN", "ASSISTANTMANAGER"],
+        lessonManagement: ["ADMIN", "ASSISTANTMANAGER"]
+    },
+    educationTerms: [
+        {label: "Fall", key:"FALL_SEMESTER"},
+        {label: "Spring", key:"SPRING_SEMESTER"},
+    ],
+    days: ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"]
     
 }

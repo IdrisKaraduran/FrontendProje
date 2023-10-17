@@ -3,6 +3,7 @@ import "./slider.scss";
 import { Carousel, Image } from "react-bootstrap";
 import slides from "../../../helpers/data/slider.json";
 
+
 const Slider = () => {
   return (
     <Carousel fade className="slider">
@@ -18,4 +19,5 @@ const Slider = () => {
     </Carousel>
   );
 };
+
 export default Slider;

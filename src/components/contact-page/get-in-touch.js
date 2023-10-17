@@ -3,10 +3,12 @@ import { config } from "../../helpers/config";
 import { FiHeadphones, FiMail, FiMapPin } from 'react-icons/fi'
 import { Nav } from "react-bootstrap";
 import "./get-in-touch.scss";
+
 const GetInTouch = () => {
   return (
     <div className="get-in-touch">
       <h2>Get In Touch</h2>
+
       <Nav className="flex-column">
         <Nav.Link href={`tel:${config.contact.phone1}`}>
             <FiHeadphones/> {config.contact.phone1}
@@ -24,5 +26,5 @@ const GetInTouch = () => {
     </div>
   );
 };
-export default GetInTouch;
 
+export default GetInTouch;
